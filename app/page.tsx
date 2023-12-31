@@ -1,6 +1,15 @@
+'use client'
+
+import { INavigatorProps } from "./shared/models/Navigator";
+import Navigator from "./components/navigator";
+
 export default function Home() {
 
+
   return (
-    <div>Home</div>
+    <>
+      <Navigator></Navigator>
+      <div>Home</div>
+    </>
   )
 }

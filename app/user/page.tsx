@@ -1,9 +1,21 @@
+'use client'
+
+import { usePathname } from "next/navigation"
+import { useEffect } from "react"
+import Navigator from "../components/navigator"
+
 const User = () => {
-    // folder có file page.tsx -> routing là tên folder: /user
-    // folder phải là folder con của folder app
-    // không có -> auto page not found
+
+    const path = usePathname() // get url hiện tại
+    useEffect(() => {
+        console.log("🚀 ~ path:", path)
+    })
+
     return (
-        <div>User</div>
+        <>
+            <Navigator />
+            <div>User</div>
+        </>
     )
 }
 
