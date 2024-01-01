@@ -15,6 +15,10 @@ const navigatorData: INavigatorProps[] = [
     {
         name: 'User Detail',
         path: '/user/user-detail'
+    },
+    {
+        name: 'User Setting',
+        path: '/user/setting'
     }
 ]
 
