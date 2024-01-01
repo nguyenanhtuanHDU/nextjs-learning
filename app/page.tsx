@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from "react-bootstrap";
 import Navigator from "./components/navigator";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +19,8 @@ export default function Home() {
       <Navigator />
       <div>Home</div>
       <div className="text-gray-300">Text</div>
-      <button className="btn btn-primary ">Button</button>
+      <Button variant="primary">Button</Button>
+      <Button variant="success">Button</Button>
       <div className="flex flex-row">
         <div className="basis-1/4">01</div>
         <div className="basis-1/4">02</div>
