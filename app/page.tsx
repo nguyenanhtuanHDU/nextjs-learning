@@ -17,6 +17,14 @@ export default function Home() {
     <>
       <Navigator />
       <div>Home</div>
+      <div className="text-gray-300">Text</div>
+      <button className="btn btn-primary ">Button</button>
+      <div className="flex flex-row">
+        <div className="basis-1/4">01</div>
+        <div className="basis-1/4">02</div>
+        <div className="basis-1/2">03</div>
+      </div>
+
       <button onClick={() => handleGoUserRoute()}>go user</button>
     </>
   )
