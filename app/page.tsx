@@ -3,6 +3,8 @@
 import { Button } from "react-bootstrap";
 import Navigator from "./components/navigator";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import image from '../public/1.jpg'
 
 export default function Home() {
   const router = useRouter()
@@ -28,6 +30,9 @@ export default function Home() {
       </div>
 
       <button onClick={() => handleGoUserRoute()}>go user</button>
+
+      <Image src={image} alt='image' /> 
+      {/* tự co giãn với kích cỡ màn hình */}
     </>
   )
 }
