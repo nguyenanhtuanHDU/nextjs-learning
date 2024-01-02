@@ -1,10 +1,14 @@
 'use client'
 
 import { Button } from "react-bootstrap";
-import Navigator from "./components/navigator";
+// import Navigator from "./components/navigator"; // không cần import
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import image from '../public/1.jpg'
+import dynamic from "next/dynamic";
+
+const Navigator = dynamic(() => import('./components/navigator'), { ssr: false }) // lazy loading
+// ssr: false : chỉ load ở client
 
 export default function Home() {
   const router = useRouter()
@@ -31,7 +35,7 @@ export default function Home() {
 
       <button onClick={() => handleGoUserRoute()}>go user</button>
 
-      <Image src={image} alt='image' /> 
+      <Image src={image} alt='image' />
       {/* tự co giãn với kích cỡ màn hình */}
     </>
   )
