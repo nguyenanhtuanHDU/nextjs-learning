@@ -5,11 +5,16 @@ import { IResponse } from "@/app/shared/models/Response";
 import { IUser } from "@/app/shared/models/User";
 import { Skeleton } from "antd";
 import axios from "axios";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const UserDetail = ({ params: { id } }: { params: { id: string } }) => {
+    const params = useParams()
+    
     const [user, setUser] = useState<IUser>()
+
     useEffect(() => {
+        console.log(params) // {id: '1'}
         getUser()
     }, [])
 
