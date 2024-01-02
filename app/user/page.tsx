@@ -6,8 +6,12 @@ import Navigator from "../components/navigator"
 import { IUser } from "../shared/models/User"
 import axios from 'axios';
 import { IResponse } from "../shared/models/Response"
+import { Button } from "antd"
+import { useRouter } from "next/navigation"
 
 const User = () => {
+    const router = useRouter()
+
     const [users, setUsers] = useState([] as IUser[])
 
     useEffect(() => {
@@ -20,12 +24,18 @@ const User = () => {
         })
     }
 
+    const handleViewUser = (id: string) => {
+        router.push('/user/user-detail/' + id)
+    }
+
     return (
         <>
             <Navigator />
             <ul>
                 {users && users.length > 0 && users.map((t, i) =>
-                    <li key={i}>{t.id} - {t.username} - {t.password} - {t.email}</li>
+                    <li key={i}>{t.id} - {t.username} - {t.password} - {t.email}
+                        <Button onClick={() => handleViewUser(t.id)}>View</Button>
+                    </li>
                 )}
             </ul>
         </>
