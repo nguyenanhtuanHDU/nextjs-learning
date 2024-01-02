@@ -10,7 +10,7 @@ const navigatorData: INavigatorProps[] = [
     },
     {
         name: 'User',
-        path: '/user'
+        path: '/user?name=tuanna&age=22'
     },
     {
         name: 'User Detail',

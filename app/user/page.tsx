@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import Navigator from "../components/navigator"
 import { IUser } from "../shared/models/User"
@@ -11,10 +11,13 @@ import { useRouter } from "next/navigation"
 
 const User = () => {
     const router = useRouter()
+    const searchParams = useSearchParams() // query
 
     const [users, setUsers] = useState([] as IUser[])
 
     useEffect(() => {
+        console.log('searchParams: ', searchParams.get('name')) // tuanna
+        console.log('searchParams: ', searchParams.get('age')) // 22
         getListUsers()
     }, []) // [] là tham số thứ 2 -> useEffect chạy 1 lần duy nhất
 
