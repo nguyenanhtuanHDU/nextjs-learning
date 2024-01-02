@@ -6,12 +6,24 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import image from '../public/1.jpg'
 import dynamic from "next/dynamic";
+import { useReportWebVitals } from 'next/web-vitals'
 
 const Navigator = dynamic(() => import('./components/navigator'), { ssr: false }) // lazy loading
 // ssr: false : chỉ load ở client
 
 export default function Home() {
   const router = useRouter()
+
+  useReportWebVitals((metric) => {
+    console.log("🚀 ~ metric:", metric)
+    // các thuộc tính của metric:
+    // name: Tên của metric (vd: FP, FID, CLS)
+    // value: Giá trị của metric đo được
+    // delta: Thay đổi so với lần đo trước
+    // id: ID của lần đo metric
+    // startTime: Thời gian bắt đầu đo
+    // duration: Tổng thời gian diễn ra sự kiện đo metric
+  })
 
   const handleGoUserRoute = () => {
     if (confirm("Go to User route?")) {
